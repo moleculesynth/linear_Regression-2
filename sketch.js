@@ -1,27 +1,28 @@
-// https://www.youtube.com/watch?v=L-Lsfu4ab74
-// https://github.com/CodingTrain/website/blob/master/Courses/intelligence_learning/session3/linear_regression_gradient_descent/sketch.js
+//gradient descent, based on Dan Shiffman's walk-through
+//  at www.youtube.com/watch?v=L-Lsfu4ab74
+
 var data = [];
+var m= 0;
+var b= 0;
 
-var m = 0;
-var b = 0;
-
-function setup() {
-  createCanvas(400, 400);
-  background(50);
+function setup () {
+    createCanvas(400,400);
 }
 
-function gradientDescent() {
-  var learning_rate = 0.5;                    //rewatch video to learn what Shiffman says about this: speed of adjustments made to line
-  for (var i = 0; i < data.length; i++) {     //look through all the data
-    var x = data[i].x;                        //x value data point
-    var y = data[i].y;                      //y value data point
-    var guess = m * x + b;                  //machine learning recipe
-    var error = y - guess;                  //error = actual - guess
-    m = m + (error * x) * learning_rate;      //for every data point, change m and b to be more accurate
-    b = b + (error) * learning_rate;
-  
- 
-  function drawLine() {
+function gradientDescent() {  //stochastic gradient descent, checking for error at each point, rather than batch
+    var learning_rate = 0.5;
+    for (var i = 0; i < data.length; i++) {
+        var x = data[i].x;
+        var y = data[i].y;
+        var guess = m * x + b; //machine learning recipe
+        var error = y - guess;
+        m = m + (error * x) * learning_rate; //the calculations of how to change m and b rely upon the chain rule, see Shiffman's video 3.5 for a lucid and helpful explanation
+        b = b + (error) * learning_rate;
+
+}
+}
+
+function drawLine() {
     var x1 = 0;
     var y1 = m * x1 + b;
     var x2 = 1;
@@ -30,7 +31,7 @@ function gradientDescent() {
     y1 = map(y1, 0, 1, height, 0);
     x2 = map(x2, 0, 1, 0, width);
     y2 = map(y2, 0, 1, height, 0);
-    stroke (50, 255, 30);           //I corrected and simplified some things here
+    stroke (50, 205, 50);
     line (x1,y1,x2,y2);
 }
 
@@ -48,7 +49,7 @@ for (var i = 0; i < data.length; i++){
     var y = map(data[i].y, 0, 1, height, 0);
     fill (255);
     stroke(255);
-    ellipse (x,y, 6, 6);
+    ellipse (x,y, 8, 8);
 }
   if (data.length > 1) {
       gradientDescent();
