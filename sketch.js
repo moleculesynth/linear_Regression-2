@@ -15,6 +15,7 @@ var b = 0;
 
 function setup() {
   createCanvas(400, 400);
+  background(51);
 }
 
 function gradientDescent() {
@@ -65,15 +66,15 @@ function gradientDescent() {
 // var c = map(c, 0, 1, height, 0);
 // drawParabola(a,b_2,c);
 
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.moveTo(x1, y1);
+//var c = document.getElementById("myCanvas");
+//var ctx = c.getContext("2d");
+//ctx.beginPath();
+//ctx.moveTo(x1, y1);
 //ax^2+bx+c
-ctx.quadraticCurveTo(a*x1^2+b_2*x1+c, y1, a*x2^2+b_2*x2+c, 0);
+//ctx.quadraticCurveTo(a*x1^2+b_2*x1+c, y1, a*x2^2+b_2*x2+c, 0);
 // either y1 and 0, or 0 and y2 works. but the first works better
-ctx.stroke();
-}
+//ctx.stroke();
+//}
 
 function mousePressed() {
   //when the button is pressed, get the x and y value and add it to the data list
