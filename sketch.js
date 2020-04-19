@@ -117,13 +117,13 @@ for (var i = 0; i < data.length; i++){
 }
 }
 
-/* The code below has a number of issues -- with ctx, plotPoint, and so on.
-These issues can be avoided by sticking with P5, use the reference [https://p5js.org/reference/]
-and find solutions for drawing and mapping native to that library. 
+// The code below has a number of issues -- with ctx, plotPoint, and so on.
+//These issues can be avoided by sticking with P5, use the reference [https://p5js.org/reference/]
+//and find solutions for drawing and mapping native to that library. 
 
 
 
-function plotPoint(){
+/*function plotPoint(){
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
   for (var i = 0; i < data.length; i++) {
@@ -157,5 +157,5 @@ function draw() {
   }
   plotPoint();
   if (data.length > 1) {
-
+*/
  
