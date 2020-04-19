@@ -7,6 +7,7 @@ var b= 0;
 
 function setup () {
     createCanvas(400,400);
+    background(50);
 }
 
 function gradientDescent() {  //stochastic gradient descent, checking for error at each point, rather than batch
