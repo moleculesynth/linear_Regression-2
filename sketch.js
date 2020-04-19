@@ -25,8 +25,8 @@ function gradientDescent() {
     var y = data[i].y;                      //y value data point
     var guess = m * x + b;                  //machine learning recipe
     var error = y - guess;                  //error = actual - guess
-    m = m + error * x * learning_rate;      //for every data point, change m and b to be more accurate
-    b = b + error * learning_rate;
+    m = m + (error * x) * learning_rate;      //for every data point, change m and b to be more accurate
+    b = b + (error) * learning_rate;
   
     //var guess_parb= a*x*x+b*x+c;
     //var error_parab=y-guess_parb;
@@ -54,7 +54,7 @@ function gradientDescent() {
     y1 = map(y1, 0, 1, height, 0);
     x2 = map(x2, 0, 1, 0, width);
     y2 = map(y2, 0, 1, height, 0);
-    stroke (50, 205, 50);           //I corrected and simplified some things here
+    stroke (50, 255, 30);           //I corrected and simplified some things here
     line (x1,y1,x2,y2);
 }
 // a=((a*x1*x1)-(a*x2*x2))/2;    //we'll revist this later: notice conflicts between "b" and "b_2"
@@ -76,20 +76,6 @@ function gradientDescent() {
 //ctx.stroke();
 //}
 
-
-function drawLine() {
-    var x1 = 0;
-    var y1 = m * x1 + b;
-    var x2 = 1;
-    var y2 = m * x2 + b;
-    x1 = map(x1, 0, 1, 0, width);
-    y1 = map(y1, 0, 1, height, 0);
-    x2 = map(x2, 0, 1, 0, width);
-    y2 = map(y2, 0, 1, height, 0);
-    stroke (50, 205, 50);
-    line (x1,y1,x2,y2);
-}
-
 function mousePressed(){
     var x = map(mouseX, 0, width, 0, 1);
     var y = map(mouseY, 0 , height, 1, 0);
@@ -104,7 +90,7 @@ for (var i = 0; i < data.length; i++){
     var y = map(data[i].y, 0, 1, height, 0);
     fill (255);
     stroke(255);
-    ellipse (x,y, 8, 8);
+    ellipse (x,y, 6, 6);
 }
   if (data.length > 1) {
       gradientDescent();
