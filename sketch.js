@@ -76,13 +76,7 @@ function gradientDescent() {
 //ctx.stroke();
 //}
 
-function mousePressed() {
-  //when the button is pressed, get the x and y value and add it to the data list
-  var x = map(mouseX, 0, width, 0, 1);
-  var y = map(mouseY, 0, height, 1, 0);
-  var point = createVector(x, y);
-  data.push(point);
-}
+
 function drawLine() {
     var x1 = 0;
     var y1 = m * x1 + b;
