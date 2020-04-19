@@ -5,14 +5,6 @@ var data = [];
 var m = 0;
 var b = 0;
 
-
-                //variables for handling quadratic equation: 
-                //ax^2+bx+c
-                //var a=0;
-                //var b_2=0;
-                //var c=0;
-
-
 function setup() {
   createCanvas(400, 400);
   background(50);
